@@ -5,22 +5,25 @@
 ## 一開始....
 
 ```
-    defmodule GenMetrics.GenStage.Monitor do
-	use GenServer
-	alias GenMetrics.GenStage.Manager
-	alias GenMetrics.GenStage.Monitor
-	alias GenMetrics.GenStage.Pipeline
-	alias GenMetrics.GenStage.Window
-	alias GenMetrics.Reporter
-	alias GenMetrics.Utils.Runtime
-
-	@moduledoc false
-	@handle_demand :handle_demand
-	@handle_events :handle_events
-	@handle_call   :handle_call
-	@handle_cast   :handle_cast
-
-	defstruct pipeline: %Pipeline{}, metrics: nil, start: 0, duration: 0
+$.ajax({
+  url: 'https://emma.pixnet.cc/album/elements?set_id=34260&user=emmademo',
+  type: 'GET',
+  success: function(data) {
+    var elements  = data.elements;
+    for(var x = 0 ; x<elements.length ; x++){
+      if(elements[x].type === 'pic'){
+        var pic = elements[x].thumb;
+        var link = elements[x].link;
+        var title = elements[x].title;
+        var node = "<li><a href='"+link+"'>"+"<img src='"+pic+"'></a><span>"+title+"</span></li>";
+        $("ul").append(node);
+      }
+    }
+  },
+  error: function(e) {
+	   console.log(e.message);
+  }
+});
 ```
 
 ![](assets/img/presentation.png)
